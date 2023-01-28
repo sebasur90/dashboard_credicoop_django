@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{ lista|json_script:'lista' }}
+
+    
+
+
+</head>
+
+<body>
+
+    <h1>
+        holaaa
+    </h1>
+
+    <h2>{{ titulo }}</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, debitis mollitia, labore necessitatibus
+        voluptas quis alias nemo possimus odio repudiandae eligendi esse optio itaque nostrum impedit eveniet soluta
+        excepturi voluptates.</p>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <p>{{lista}}</p>
+
+
+    <script type="text/javascript" src="{% static '/js/grafico_barras.js' %}"></script>
+
+</body>
+
+</html>

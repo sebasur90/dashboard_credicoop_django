@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dashboard</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+
+    <!-- CUSTOM JS -->
+
+    {{ valores|json_script:"valores" }}
+
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    {% comment %}
+    <script type="text/javascript" src="{% static '/js/grafico_barras.js' %}"></script> {% endcomment %}
+
+
+
+    <!-- <link rel="stylesheet" href="{% static '/css/estilos.css' %}"> -->
+    <link rel="stylesheet" href="{% static '/css/estilos2.css' %}">
+
+
+</head>
+
+<body>
+
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="logo">
+                <img src="{% static '/img/logo.svg' %}" alt="">
+                <span>TuMejorWeb</span>
+            </div>
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <!-- INPUT SEARCH -->
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Buscar">
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+            <div class="enlace">
+                <i class="bx bx-grid-alt"></i>
+                <span>Dashboard</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-user"></i>
+                <span>Usuarios</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-grid-alt"></i>
+                <span>Analíticas</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-message-square"></i>
+                <span>Mensajes</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-file-blank"></i>
+                <span>Archivos</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-cart"></i>
+                <span>Pedidos</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-heart"></i>
+                <span>Favoritos</span>
+            </div>
+
+            <div class="enlace">
+                <i class="bx bx-cog"></i>
+                <span>Configuración</span>
+            </div>
+        </div>
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div>
+        <!--                | means OR operator-->
+        <strong>{{message|safe}}</strong>
+    </div>
+    {% endfor %}
+    {% else %}
+    {{order}}
+    <form action="/ingresos/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file1"> Upload a file</label>
+        <input type="file" id="file1" name="file">
+        <small>Only accepts CSV files</small>
+        <button type="submit">Upload</button>
+    </form>
+    {% endif %}
+    {% for profile in profiles %}
+    {{profile.name}}
+    {% endfor %}
+
+    <div id="container2"></div>
+
+    <div>
+        <figure class="highcharts-figure">
+            <div id="parent-container">
+                <div id="play-controls">
+                    <button id="play-pause-button" class="fa fa-play" title="play"></button>
+                    <input id="play-range" type="range" value="1960" min="1960" max="2018">
+                </div>
+                <div id="container"></div>
+            </div>
+            <p class="highcharts-description">
+                Bar chart showing the world population by countries from 1960 to 2018.
+            </p>
+        </figure>
+
+    </div>
+
+    <script type="text/javascript" src="{% static ' /js/app.js' %}">
+    </script>
+    <script type="text/javascript" src="{% static '/js/graf.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/bar_race.js' %}"></script>
+
+</body>
+
+</html>
