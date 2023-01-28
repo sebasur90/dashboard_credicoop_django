@@ -10,6 +10,9 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"></script>
 
@@ -25,6 +28,7 @@
 
 
       <div class="card-columns">
+
         <div class="card">
             <div id="container_graf_lineas_peso_dolar"></div>
           <div class="card-body">
@@ -32,6 +36,7 @@
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
+
         <div class="card p-3">
           <blockquote class="blockquote mb-0 card-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -42,14 +47,44 @@
             </footer>
           </blockquote>
         </div>
+
+        <div class="card p-3">
+            <blockquote class="blockquote mb-0 card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <footer class="blockquote-footer">
+                <small class="text-muted">
+                  Someone famous in <cite title="Source Title">Source Title</cite>
+                </small>
+              </footer>
+            </blockquote>
+          </div>
+
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
+            <div id="container_graf_barras_peso_dolar"></div>
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
+
+        <div class="card">
+            <figure class="highcharts-figure">
+                <div id="container_graf_burbujas"></div>
+                <p class="highcharts-description">
+                  Packed bubble charts are visualizations where the size and optionally
+                  the color of the bubbles are used to visualize the data. The positioning
+                  of the bubbles is not significant, but is optimized for compactness.
+                  Try dragging the bubbles in this chart around, and see the effects.
+                </p>
+              </figure>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+
         <div class="card bg-primary text-white text-center p-3">
           <blockquote class="blockquote mb-0">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
@@ -60,6 +95,7 @@
             </footer>
           </blockquote>
         </div>
+
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -67,8 +103,10 @@
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
+
+
         <div class="card">
-          <img class="card-img" src="..." alt="Card image">
+            <div id="container_graf_horizontal"></div>
         </div>
         <div class="card p-3 text-right">
           <blockquote class="blockquote mb-0">
@@ -80,6 +118,7 @@
             </footer>
           </blockquote>
         </div>
+
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -91,12 +130,9 @@
     
 
     
+      <canvas id="grafica_barras_redondeada"></canvas>
 
-    <div id="container_graf_barras_peso_dolar"></div>
-
-    <div id="container_ejemplo"></div>
-
-    <canvas id="grafica"></canvas>
+   
 
     </div>
 
@@ -106,7 +142,9 @@
    
     <script type="text/javascript" src="js/graf_lineas_peso_dolar.js"></script>
     <script type="text/javascript" src="js/graf_barras_peso_dolar.js"></script>
-    <script type="text/javascript" src="js/ejemplo.js"></script>
+    <script type="text/javascript" src="js/graf_barras_redondeadas.js"></script>
+    <script type="text/javascript" src="js/graf_barras_horizontales.js"></script>
+    <script type="text/javascript" src="js/graf_burbujas.js"></script>
 </body>
 
 </html>

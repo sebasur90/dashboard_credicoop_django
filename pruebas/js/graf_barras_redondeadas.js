@@ -1,4 +1,4 @@
-var ctx = document.getElementById("grafica").getContext("2d");
+var ctx = document.getElementById("grafica_barras_redondeada").getContext("2d");
 var myCharts = new Chart(ctx, {
     type: "bar",
     data: {
